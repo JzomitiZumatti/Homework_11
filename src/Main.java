@@ -3,7 +3,7 @@ public class Main {
         ArrayValueCalculator calculator = new ArrayValueCalculator();
 
 
-        String[][][] testArrays = {
+        String[][][] test = {
                 {{"1", "2", "3", "4"}, {"6", "7", "8","9"}, {"5", "3", "7", "1"}, {"2", "4", "5", "8"}},
                 {{"1", "2", "three", "4"}, {"6", "7", "8","9"}, {"5", "3", "7", "1"}, {"2", "4", "5", "8"}},
                 null,
@@ -11,7 +11,7 @@ public class Main {
         };
 
         System.out.println("Without streams: ");
-        for (String[][] testArray : testArrays) {
+        for (String[][] testArray : test) {
             try {
                 System.out.println(calculator.doCalc(testArray));
             } catch (ArraySizeException | ArrayDataException exception) {
@@ -22,7 +22,7 @@ public class Main {
         }
 
         System.out.println("\nUsing streams: ");
-        for (String[][] testArray : testArrays) {
+        for (String[][] testArray : test) {
             try {
                 System.out.println(calculator.doCalcWithStreams(testArray));
             } catch (ArraySizeException | ArrayDataException exception) {
